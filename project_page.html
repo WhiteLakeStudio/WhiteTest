@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenitgatan Office Complex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="project_full_title">Zenitgatan Office Complex</div>
+    </div>
+    <header>
+        <div class="logo">WhiteLakeStudio</div>
+        <div class="menu-icon">&#9776;</div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="workflow.html">WORKFLOW</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="video-carousel">
+                <video autoplay muted loop id="video1">
+                    <source src="content/img/p1r1.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="pr_description_full">
+                <div class="pr_title_full">Zenitgatan Office Complex</div>
+                <div class="pr_description">The office complex features a classic Swedish black-and-white design, combining timeless elegance with clean lines and traditional elements.
+                     The four-story building blends seamlessly with the environment, offering ample parking and a professional yet inviting atmosphere. 
+                     Ideal for those seeking a workspace that reflects Swedish craftsmanship and timeless style.</div>
+            </div>
+            <div class="pr_render_full">
+                <div class="pr_rndr_img"><img src="content/img/p1_r1_day_Fin_JPEG.jpg" alt="rendering"></div>
+                <div class="pr_rndr_img"><img src="content/img/p1_r1_morning_Fin_JPEG.jpg" alt="rendering"></div>
+                <div class="pr_rndr_img"><img src="content/img/p1_r1_night_Fin_JPEG.jpg" alt="rendering"></div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="content/icons/instagram.png" alt="instagram"></a>
+                <a href="#"><img src="content/icons/telegram.png" alt="telegram"></a>
+                <a href="#"><img src="content/icons/whatsapp.png" alt="whatsapp"></a>
+                <a href="#"><img src="content/icons/youtube.png" alt="youtube"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 WhiteLakeStudio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const videos = document.querySelectorAll('.video-carousel video');
+        let currentVideoIndex = 0;
+
+        function showNextVideo() {
+            videos[currentVideoIndex].style.opacity = 0;
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videos[currentVideoIndex].style.opacity = 1;
+        }
+
+        videos[currentVideoIndex].style.opacity = 1;
+        setInterval(showNextVideo, 20000);
+
+        
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Loading screen logic
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 2000); // Display for 2 seconds
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const renderFull = document.querySelector('.pr_render_full');
+        const images = renderFull.querySelectorAll('.pr_rndr_img');
+
+        const updateGrid = () => {
+            if (window.innerWidth > 1000) {
+                if (images.length % 2 !== 0) {
+                    images[images.length - 1].style.gridColumn = 'span 2';
+                } else {
+                    images[images.length - 1].style.gridColumn = '';
+                }
+            } else {
+                images.forEach(image => {
+                    image.style.gridColumn = '';
+                });
+            }
+        };
+
+        window.addEventListener('resize', updateGrid);
+        updateGrid();
+    });
+</script>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+        </script>
+</body>
+</html>
