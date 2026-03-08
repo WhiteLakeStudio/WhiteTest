@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (mediaElements.length === 0) return;
     
             const firstMediaElement = mediaElements[0];
+            // Важливо: перевіряємо, чи висота не 0
             const firstMediaHeight = firstMediaElement.videoHeight || firstMediaElement.naturalHeight;
+            if (!firstMediaHeight || firstMediaHeight === 0) return; 
     
             if (window.innerWidth >= 1000) {
                 mediaElements.forEach(media => {
@@ -33,19 +35,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    window.addEventListener('resize', resizeImages);
-    resizeImages();
 
-    const mediaElements = document.querySelectorAll('.img_g');
-
-    mediaElements.forEach(media => {
-        media.addEventListener('load', resizeImages);
+    // --- НОВИЙ БЛОК: Чекаємо на завантаження кожного відео/фото ---
+    const allMedia = document.querySelectorAll('.img_g');
+    allMedia.forEach(media => {
         if (media.tagName === 'VIDEO') {
             media.addEventListener('loadedmetadata', resizeImages);
+            if (media.readyState >= 1) resizeImages(); // Якщо вже завантажено
+        } else {
+            media.addEventListener('load', resizeImages);
+            if (media.complete) resizeImages();
         }
     });
 
+    window.addEventListener('resize', resizeImages);
+    resizeImages(); // Початковий запуск
+
+    // --- Твій код для повноекранного режиму (без змін) ---
     const fullscreenOverlay = document.getElementById('fullscreen-overlay');
     const fullscreenImage = document.getElementById('fullscreen-image');
     const fullscreenVideo = document.getElementById('fullscreen-video');
@@ -55,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeFullscreen = document.getElementById('close-fullscreen');
     const fullProjectButton = document.getElementById('full-project-button');
 
-    mediaElements.forEach(media => {
+    allMedia.forEach(media => {
         media.addEventListener('click', function() {
             const title = this.getAttribute('data-title');
             const description = this.getAttribute('data-description');
@@ -65,7 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.tagName === 'VIDEO') {
                 fullscreenImage.style.display = 'none';
                 fullscreenVideo.style.display = 'block';
-                fullscreenVideo.src = this.src;
+                // Використовуємо source src, якщо він є, або звичайний src
+                const videoSrc = this.querySelector('source') ? this.querySelector('source').src : this.src;
+                fullscreenVideo.src = videoSrc;
             } else {
                 fullscreenImage.style.display = 'block';
                 fullscreenVideo.style.display = 'none';
@@ -80,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             fullscreenOverlay.style.display = 'flex';
 
-            // Додаємо можливість скролінгу в повноекранному режимі після ширини екрану 1000 пікселів
             if (window.innerWidth <= 1000) {
                 fullscreenOverlay.style.overflowY = 'auto';
             } else {
@@ -89,14 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    closeFullscreen.addEventListener('click', function() {
-        fullscreenOverlay.style.display = 'none';
-    });
-
-    fullscreenOverlay.addEventListener('click', function(event) {
-        if (event.target === fullscreenOverlay) {
-            fullscreenOverlay.style.display = 'none';
-        }
+    closeFullscreen.addEventListener('click', () => fullscreenOverlay.style.display = 'none');
+    fullscreenOverlay.addEventListener('click', (e) => {
+        if (e.target === fullscreenOverlay) fullscreenOverlay.style.display = 'none';
     });
 });
 
