@@ -139,6 +139,15 @@ footer {
     object-fit: cover;
 }
 
+/* Робимо як у Tero — резервуємо місце під відео */
+.img_g {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб відео заповнювало контейнер без деформації */
+    background-color: #0B1215; /* Темний фон, поки вантажиться */
+}
+
 .contact-page {
     width: 100%;
     display: flex;
@@ -771,3 +780,4 @@ video.img_g {
     }
 
 }
+
