@@ -133,6 +133,12 @@ footer {
     justify-content: space-between;
 }
 
+.img_container video {
+    background-color: #161d20; /* Колір-заглушка, як у Tero */
+    display: block;
+    object-fit: cover;
+}
+
 .contact-page {
     width: 100%;
     display: flex;
@@ -763,4 +769,5 @@ video.img_g {
         width: 100%;
         margin: 10px 0;
     }
+
 }
