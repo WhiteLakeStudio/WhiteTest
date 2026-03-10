@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll("video").forEach(v => v.play().catch(()=>{}));
+
+document.querySelectorAll("video[data-src]").forEach(video => {
+
+    const src = video.dataset.src;
+
+    const source = document.createElement("source");
+    source.src = src;
+    source.type = "video/webm";
+
+    video.appendChild(source);
+
+    video.load();
+
+});
+    
     function resizeImages() {
         const galleryLines = document.querySelectorAll('.img_gallery_line');
     
@@ -104,4 +119,5 @@ document.querySelectorAll("video").forEach(v => v.play().catch(()=>{}));
 function toggleMenu() {
     const navMenu = document.querySelector('.nav-menu');
     navMenu.classList.toggle('active');
+
 }
