@@ -1,12 +1,29 @@
-/* project.css */
+/* project.css - ПОВНИЙ ФАЙЛ ДЛЯ СТОРІНКИ ПРОЕКТУ */
 
-/* Фікс видимості: робимо main видимим за замовчуванням для цієї сторінки */
+/* 1. Пріоритетна видимість */
 main {
-    opacity: 1 !important; 
+    opacity: 1 !important;
     margin-top: 80px;
+    display: block !important;
 }
 
-/* Специфічні стилі для сторінки проекту */
+/* 2. Стилі головного відео (те, що зверху) */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 3. Лоадер сторінки проекту */
 #loading-screen {
     position: fixed;
     top: 0;
@@ -26,19 +43,20 @@ main {
 }
 
 .project-header-full {
-    font-size: clamp(40px, 8vw, 100px);
+    font-size: clamp(30px, 5vw, 80px);
     font-weight: 300;
     color: #bbbbbb;
     text-align: center;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-/* Опис проекту */
+/* 4. Опис проекту (Секція під відео) */
 .project-desc-full {
     display: flex;
     flex-direction: row;
-    margin: 100px 60px;
+    padding: 100px 60px;
     gap: 40px;
+    background-color: #0B1215;
 }
 
 .project-title-full {
@@ -55,10 +73,10 @@ main {
     width: 50%;
 }
 
-/* Сітка галереї */
+/* 5. Галерея рендерів (Сітка) */
 .project-gallery-full {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Дві колонки */
     gap: 10px;
     padding: 10px;
     background-color: #0B1215;
@@ -66,25 +84,26 @@ main {
 
 .project-image {
     width: 100%;
+    height: auto;
     display: block;
     object-fit: cover;
 }
 
-/* Адаптивність для мобілок */
+/* 6. Адаптивність для мобільних пристроїв (щоб не пливла верстка) */
 @media (max-width: 1000px) {
     .project-desc-full {
         flex-direction: column;
-        margin: 50px 20px;
+        padding: 50px 20px;
+        margin: 0;
     }
     .project-title-full, .project-description {
         width: 100%;
+        margin: 10px 0;
     }
     .project-gallery-full {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Одна колонка на мобілках */
     }
     .project-header-full {
-        font-size: 40px;
+        font-size: 32px;
     }
-
 }
-
