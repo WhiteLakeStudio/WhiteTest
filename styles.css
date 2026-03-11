@@ -702,5 +702,98 @@ video.gallery-media {
     }
 }
 
+ /* Styles for the loading screen */
+ #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* You can choose any color */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: transform 1s ease-in-out;
+}
+
+.project-header-full {
+    font-size: 100px;
+    font-weight: 300;
+    color: #bbbbbb;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#loading-screen.hidden {
+    transform: translateY(-100%);
+}
+
+/* Styles for the loading screen */
+
+.project-desc-full {
+    height: auto;
+    margin: 60px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.project-title-full {
+    font-size: 40px;
+    font-weight: 300;
+    color: #bbbbbb;
+    width: 50%;
+    margin: 30px;
+}
+
+.project-description {
+    font-size: 24px;
+    color: #bbbbbb;
+    width: 50%;
+    margin: 30px;
+}
+
+.project-gallery-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    gap: 80px;
+    margin: 30px;
+    margin-bottom: 120px;
+}
+
+.project-image {
+    display: -webkit-box;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .project-gallery-full {
+        grid-template-columns: 1fr;
+    }
+
+    .project-desc-full {
+        flex-direction: column;
+        margin: 0 30px;
+    }
+
+    .project-title-full,
+    .project-description {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
 
 
