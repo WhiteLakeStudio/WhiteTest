@@ -1,36 +1,36 @@
-/* project.css - ПОВНИЙ ФАЙЛ ДЛЯ СТОРІНКИ ПРОЕКТУ */
+/* ГЛОБАЛЬНІ НАЛАШТУВАННЯ ДЛЯ СТОРІНКИ ПРОЄКТУ */
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-/* 1. Пріоритетна видимість */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding-top: 80px; /* Відступ під хедер */
+    font-family: 'Roboto', sans-serif;
+    background-color: #0B1215;
+    color: #8d8d8d;
+}
+
+/* ПРИМУСОВА ВИДИМІСТЬ (Фікс того, що контент зникав) */
 main {
     opacity: 1 !important;
-    margin-top: 80px;
     display: block !important;
 }
 
-/* 2. Стилі головного відео (те, що зверху) */
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 80px);
-    overflow: hidden;
-    background-color: #000;
-}
-
-.video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* 3. Лоадер сторінки проекту */
+/* ЕКРАН ЗАВАНТАЖЕННЯ (Loading Screen) */
 #loading-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2d4d16;
+    background-color: #4d3816;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,67 +43,91 @@ main {
 }
 
 .project-header-full {
-    font-size: clamp(30px, 5vw, 80px);
+    font-size: clamp(30px, 6vw, 100px);
     font-weight: 300;
     color: #bbbbbb;
     text-align: center;
-    padding: 0 20px;
+    text-transform: uppercase;
 }
 
-/* 4. Опис проекту (Секція під відео) */
+/* СЕКЦІЯ ГОЛОВНОГО ВІДЕО */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #000;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* БЛОК ОПИСУ ПРОЄКТУ */
 .project-desc-full {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     padding: 100px 60px;
     gap: 40px;
     background-color: #0B1215;
 }
 
 .project-title-full {
+    flex: 1;
+    min-width: 300px;
     font-size: 40px;
     font-weight: 300;
     color: #bbbbbb;
-    width: 50%;
 }
 
 .project-description {
+    flex: 1;
+    min-width: 300px;
     font-size: 20px;
     line-height: 1.6;
     color: #8d8d8d;
-    width: 50%;
 }
 
-/* 5. Галерея рендерів (Сітка) */
+/* ГАЛЕРЕЯ ЗОБРАЖЕНЬ (Тут був основний "плавун") */
 .project-gallery-full {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Дві колонки */
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr); /* Рівно дві колонки */
+    gap: 15px;
+    padding: 15px;
     background-color: #0B1215;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-image {
     width: 100%;
-    height: auto;
+    height: 600px; /* Фіксуємо висоту для десктопа */
+    object-fit: cover; /* Щоб фото не стискалося */
     display: block;
-    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-/* 6. Адаптивність для мобільних пристроїв (щоб не пливла верстка) */
+/* АДАПТИВНІСТЬ (Мобільна версія) */
 @media (max-width: 1000px) {
     .project-desc-full {
+        padding: 40px 20px;
         flex-direction: column;
-        padding: 50px 20px;
-        margin: 0;
     }
-    .project-title-full, .project-description {
-        width: 100%;
-        margin: 10px 0;
+
+    .project-title-full {
+        font-size: 28px;
     }
+
     .project-gallery-full {
-        grid-template-columns: 1fr; /* Одна колонка на мобілках */
+        grid-template-columns: 1fr; /* Одна колонка на телефоні */
+        gap: 10px;
+        padding: 10px;
     }
-    .project-header-full {
-        font-size: 32px;
+
+    .project-image {
+        height: auto; /* На телефоні нехай тягнеться за пропорціями */
+        max-height: 500px;
     }
 }
