@@ -794,6 +794,10 @@ video.gallery-media {
     }
 }
 
+.main_project_main {
+    opacity: 1 !important; 
+    margin-top: 80px;
+}
 
 
 
