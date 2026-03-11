@@ -1,38 +1,43 @@
-/* ПОВНИЙ ТА ВИПРАВЛЕНИЙ PROJECT.CSS */
+/* project.css */
 
-/* Глобальне для сторінки */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0B1215;
-    color: #8d8d8d;
-    font-family: 'Roboto', sans-serif;
-}
-
+/* Фікс видимості: робимо main видимим за замовчуванням для цієї сторінки */
 main {
-    opacity: 1 !important; /* Робимо видимим відразу */
-    display: block !important;
+    opacity: 1 !important; 
+    margin-top: 80px;
 }
 
-/* Відео-обгортка */
-.video-wrapper {
-    width: 100%;
-    height: calc(100vh - 80px);
-    overflow: hidden;
-    background: #000;
-}
-
-.video-wrapper video {
+/* Специфічні стилі для сторінки проекту */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: #0B1215;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: transform 1s ease-in-out;
+}
+
+#loading-screen.hidden {
+    transform: translateY(-100%);
+}
+
+.project-header-full {
+    font-size: clamp(40px, 8vw, 100px);
+    font-weight: 300;
+    color: #bbbbbb;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Опис проекту */
 .project-desc-full {
     display: flex;
     flex-direction: row;
-    padding: 100px 60px;
+    margin: 100px 60px;
     gap: 40px;
 }
 
@@ -50,42 +55,34 @@ main {
     width: 50%;
 }
 
-/* ГАЛЕРЕЯ — ТУТ ГОЛОВНІ ВИПРАВЛЕННЯ */
+/* Сітка галереї */
 .project-gallery-full {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Жорстко 2 колонки */
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: #0B1215;
 }
 
 .project-image {
     width: 100%;
-    height: 70vh; /* Або 600px, щоб всі були однакові по висоті */
-    object-fit: cover; /* КЛЮЧОВЕ: картинка заповнює блок без деформації */
     display: block;
+    object-fit: cover;
 }
 
-/* Якщо зображення одне в ряду (останнє) */
-.project-image[style*="grid-column: span 2"] {
-    height: 80vh; 
-}
-
-/* Адаптивність */
+/* Адаптивність для мобілок */
 @media (max-width: 1000px) {
     .project-desc-full {
         flex-direction: column;
-        padding: 40px 20px;
+        margin: 50px 20px;
     }
     .project-title-full, .project-description {
         width: 100%;
     }
     .project-gallery-full {
-        grid-template-columns: 1fr; /* 1 колонка на мобільних */
+        grid-template-columns: 1fr;
     }
-    .project-image {
-        height: auto;
-        max-height: 500px;
+    .project-header-full {
+        font-size: 40px;
     }
 }
