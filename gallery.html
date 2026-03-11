@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WLS-GALLERY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loader.css"> <script src="loader.js"></script> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="brand-logo">WhiteLakeStudio</div>
+        <div class="nav-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-wrapper">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="workflow.html">WORKFLOW</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="gallery-line">
+            <div class="gallery-cell">
+                <video class="gallery-media"
+playsinline
+muted
+loop
+autoplay
+preload="metadata"
+data-src="content/wl/img_exmpl_1.webm"
+data-title="Project_Title"
+data-client="Client A"
+data-description="Lorem ipsum..."
+data-full-project-link="project_page.html">
+</video>
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client A</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/04.jpg" alt="car" data-title="Project_Title" data-client="Client B" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client B</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/03.jpg" alt="car" data-title="Project_Title" data-client="Client C" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client C</div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-line">
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/cam_1_p2_r1_FINAL.jpg" alt="Pulpetgatan Office" data-title="Pulpetgatan Office" data-client="WhiteLakeStudio" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html" playsinline muted loop autoplay></img>
+                <div class="gallery-overlay">
+                    <div class="project-heading">Pulpetgatan Office</div>
+                    <div class="client-heading">WhiteLakeStudio</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/05.jpg" alt="car" data-title="Project_Title" data-client="Client E" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client E</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/01.jpg" alt="car" data-title="Project_Title" data-client="Client F" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client F</div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-line">
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/cam_1_p3_r1_FINAL.jpg" alt="bathroom" data-title="Project_Title" data-client="Client G" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client G</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/06.jpg" alt="car" data-title="Project_Title" data-client="Client H" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client H</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/04.jpg" alt="car" data-title="Project_Title" data-client="Client I" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client I</div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-line">
+            <div class="gallery-cell">
+                <video class="gallery-media" src="content/wl/img_exmpl_3.webm" data-title="Project_Title" data-client="Client A" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html" playsinline muted loop autoplay preload="metadata"></video>
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client A</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/06.jpg" alt="car" data-title="Project_Title" data-client="Client K" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client K</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <video class="gallery-media" src="content/wl/img_exmpl_1.webm" data-title="Project_Title" data-client="Client A" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html" playsinline muted loop autoplay preload="metadata"></video>
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client A</div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-line">
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/08.webp" data-title="Project_Title" data-client="Client G" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client G</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/06.jpg" alt="car" data-title="Project_Title" data-client="Client H" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client H</div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <img class="gallery-media" src="content/wl/04.jpg" alt="car" data-title="Project_Title" data-client="Client I" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." data-full-project-link="project_page.html">
+                <div class="gallery-overlay">
+                    <div class="project-heading">Project_Title</div>
+                    <div class="client-heading">Client I</div>
+                </div>
+            </div>
+        </div>
+        <div class="media-links">
+            <a href="#"><img src="content/icons/instagram.png" alt="instagram"></a>
+            <a href="#"><img src="content/icons/telegram.png" alt="telegram"></a>
+            <a href="#"><img src="content/icons/whatsapp.png" alt="whatsapp"></a>
+            <a href="#"><img src="content/icons/youtube.png" alt="youtube"></a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 WhiteLakeStudio. All rights reserved.</p>
+    </footer>
+    <div id="fullscreen-overlay">
+        <div id="fullscreen-content">
+            <button id="close-fullscreen">&#10005;</button>
+            <div id="fullscreen-media-container">
+                <img id="fullscreen-image" src="" alt="">
+                <video id="fullscreen-video" src="" playsinline muted loop autoplay></video>
+            </div>
+            <div id="fullscreen-info">
+                <h2 id="fullscreen-title"></h2>
+                <p id="fullscreen-description"></p>
+                <p id="fullscreen-client"></p>
+                <button id="full-project-button">MORE HERE</button>
+            </div>
+        </div>
+    </div>
+    <script src="gallery.js"></script>
+</body>
+</html>
+

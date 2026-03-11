@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteLakeViz Loader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1f1f1f;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .loader-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #single-letter {
+            font-size: 80px;
+            font-weight: 300;
+            color: #e3e3e3;
+            position: absolute;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            transition: opacity 0.3s;
+        }
+
+        #full-brand-logo {
+            font-size: clamp(30px, 7vw, 60px);
+            font-weight: 300;
+            color: #e3e3e3;
+            letter-spacing: clamp(4px, 1.5vw, 12px);
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0; 
+            opacity: 0;
+            text-align: center;
+            display: block;
+            
+            /* Налаштування анімації розгортання */
+            /* Додаємо filter та transform до списку transition */
+            transition: 
+                width 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95), 
+                opacity 0.6s ease,
+                filter 1.2s ease,
+                transform 1.2s ease;
+            
+            /* Початковий стан блюру */
+            filter: blur(8px);
+            transform: scaleX(1.1);
+        }
+
+        /* Стан, коли напис повністю розгорнувся */
+        #full-brand-logo.reveal {
+            opacity: 1;
+            filter: blur(0px); /* Розмиття зникає */
+            transform: scaleX(1); /* Масштаб повертається до норми */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container">
+        <div id="single-letter"></div>
+        <div id="full-brand-logo">WhiteLakeViz</div>
+    </div>
+
+    <script>
+        const targetWord = "WhiteLakeViz";
+        const scroller = document.getElementById('single-letter');
+        const fullbrand-logo = document.getElementById('full-brand-logo');
+        
+        let charIndex = 0;
+
+        function playLetterSequence() {
+            if (charIndex < targetWord.length) {
+                scroller.innerText = targetWord[charIndex];
+                charIndex++;
+                
+                // Швидкість перебору 250мс за твоїм запитом
+                setTimeout(playLetterSequence, 250);
+            } else {
+                startFullReveal();
+            }
+        }
+
+        function startFullReveal() {
+            scroller.style.opacity = "0";
+
+            setTimeout(() => {
+                scroller.style.display = 'none';
+                
+                // Вимірюємо контент
+                const fullWidth = fullbrand-logo.scrollWidth;
+                
+                // Запускаємо анімацію
+                fullbrand-logo.classList.add('reveal');
+                // Додаємо трохи запасу до ширини, щоб через letter-spacing нічого не перескочило
+                fullbrand-logo.style.width = (fullWidth + 30) + "px"; 
+            }, 300);
+        }
+
+        window.onload = playLetterSequence;
+    </script>
+</body>
+</html>
