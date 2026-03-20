@@ -595,54 +595,86 @@ video.gallery-media {
 /* --- FINAL MOBILE FIXES --- */
 
 @media (max-width: 1000px) {
-    /* 1. БУРГЕР МЕНЮ - Повне центрування */
+    /* 1. КНОПКА БУРГЕРА (Три риски) */
     .nav-toggle {
-        display: flex !important;
+        display: flex !important; /* Вмикаємо видимість */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 35px !important; /* Розмір самих рисок */
+        line-height: 50px;
+        justify-content: center;
+        align-items: center;
+        color: #8d8d8d;
+        z-index: 10001;
+        background: transparent;
+        border: none;
     }
 
+    /* 2. НАВІГАЦІЯ (Повне центрування) */
     .nav-wrapper {
-        display: none;
-        position: fixed;
+        display: none; 
+        position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        background: #0B1215 !important;
+        background: #0B1215 !important; /* Твій темний фон */
+        z-index: 9999 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        
+        /* Головне для центрування тексту: */
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        z-index: 9999 !important;
+        text-align: center !important;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .nav-wrapper.active {
         display: flex !important;
+        opacity: 1;
     }
 
     .nav-wrapper ul {
+        display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 25px !important;
+        justify-content: center !important;
+        list-style: none !important;
+        width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+        gap: 30px !important; /* Відстань між пунктами */
+    }
+
+    .nav-wrapper ul li {
+        width: 100%;
+        margin: 0 !important;
     }
 
     .nav-wrapper ul li a {
-        font-size: 35px !important;
+        font-size: 32px !important; /* Великий шрифт для мобілки */
+        display: block;
+        width: 100%;
+        color: #8d8d8d !important;
     }
 
-    /* 2. ABOUT PAGE - Виправляємо вузький текст */
+    /* 3. ABOUT & WORKFLOW (Фікс вузького тексту) */
     .about-item {
         flex-direction: column !important;
-        padding: 0 20px !important; /* Прибираємо 120px, які заважали */
-        margin-bottom: 60px !important;
-        width: 100% !important;
-        box-sizing: border-box;
+        padding: 0 20px !important;
+        margin-bottom: 50px !important;
     }
 
-    .about-item_L, .about-item_R, .about-item-left, .about-item-right, .about-media {
+    .about-item_L, .about-item_R, .about-media {
         width: 100% !important;
         margin: 0 0 20px 0 !important;
-        order: unset !important; /* Щоб заголовок завжди був зверху */
+        text-align: left !important;
     }
 
     .about-header {
@@ -651,52 +683,28 @@ video.gallery-media {
         margin: 20px 0 !important;
     }
 
-    .about-item p, .about-text {
-        font-size: 18px !important;
-        line-height: 1.4 !important;
-        text-align: left !important;
-    }
-
-    /* 3. WORKFLOW & FAQ - Виправляємо сітку */
     .workflow-section {
         display: flex !important;
         flex-direction: column !important;
         padding: 0 20px !important;
-        margin-top: 40px !important;
-        gap: 30px;
+        margin: 40px 0 !important;
     }
 
     .workflow-section-media, .faq-section {
         width: 100% !important;
-        margin: 0 !important;
+        margin: 0 0 30px 0 !important;
     }
 
-    .workflow-section-title, .faq-section_title {
-        font-size: 30px !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 4. GALLERY - Вертикальна адаптація */
-    .gallery-line {
-        display: block !important;
-    }
-
+    /* 4. ГАЛЕРЕЯ */
+    .gallery-line { display: block !important; }
     .gallery-cell {
-        display: block !important;
         width: 100% !important;
         margin: 10px 0 !important;
     }
-
     .gallery-overlay {
         opacity: 1 !important;
-        background: rgba(0, 0, 0, 0.5) !important;
         position: relative !important;
-        padding: 15px 0;
+        background: rgba(0,0,0,0.5) !important;
+        padding: 10px 0;
     }
-}
-
-/* Фікс для дуже малих екранів */
-@media (max-width: 480px) {
-    .brand-logo { margin-left: 15px !important; }
-    .nav-toggle { margin-right: 15px !important; }
 }
