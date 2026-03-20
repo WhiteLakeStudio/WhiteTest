@@ -674,3 +674,106 @@ video.gallery-media {
         font-size: 14px !important;
     }
 }
+
+
+
+
+@media (max-width: 1000px) {
+    /* Центруємо саме меню */
+    .nav-wrapper {
+        display: none; /* За замовчуванням приховано, JS має додавати .active */
+        position: fixed;
+        top: 0; /* Робимо на весь екран від самого верху */
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #0B1215;
+        z-index: 9999;
+        flex-direction: column;
+        justify-content: center; /* Центр по вертикалі */
+        align-items: center;     /* Центр по горизонталі */
+    }
+
+    .nav-wrapper.active {
+        display: flex !important;
+    }
+
+    .nav-wrapper ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .nav-wrapper ul li a {
+        font-size: 32px !important; /* Робимо великими для пальців */
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .about-item {
+        flex-direction: column !important;
+        padding: 0 20px !important; /* Прибираємо твої 120px */
+        margin-bottom: 60px;
+    }
+
+    .about-item_L, .about-item_R, .about-item-left, .about-item-right, .about-media {
+        width: 100% !important; /* Усі блоки на всю ширину */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        order: unset !important; /* Скидаємо порядок, щоб йшло Логічно: Заголовок -> Фото -> Текст */
+    }
+
+    .about-header {
+        font-size: 28px !important;
+        margin: 20px 0 !important;
+        text-align: left !important; /* На мобілці виключка вправо виглядає дивно */
+    }
+
+    .about-item p, .about-text {
+        font-size: 18px !important;
+        line-height: 1.4;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .workflow-section {
+        display: block !important; /* Вбиваємо grid */
+        margin-top: 40px !important;
+        padding: 0 20px;
+    }
+
+    .workflow-section-media, .faq-section {
+        margin: 0 0 40px 0 !important;
+        width: 100% !important;
+    }
+
+    .workflow-section-video {
+        max-height: none !important;
+        height: auto;
+    }
+
+    .workflow-section-title, .faq-section_title {
+        font-size: 30px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .faq-question, .faq-section-question, .faq-answer, .faq-section-answer {
+        font-size: 18px !important; /* Текст FAQ теж трохи меншим */
+    }
+}
