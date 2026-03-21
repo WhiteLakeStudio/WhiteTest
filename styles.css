@@ -706,5 +706,57 @@ video.gallery-media {
         position: relative !important;
         background: rgba(0,0,0,0.5) !important;
         padding: 10px 0;
+
+
+        /* --- PROJECT PAGE SPECIFIC MOBILE FIXES --- */
+@media (max-width: 1000px) {
+    /* Вирівнюємо відступ зверху для головного контейнера проекту */
+    main_project_main {
+        margin-top: 80px !important;
+        display: block !important;
+    }
+
+    /* Опис проекту: перетворюємо рядок на стовпчик */
+    .project-desc-full {
+        flex-direction: column !important;
+        margin: 40px 20px !important; /* Прибираємо гігантські відступи 100px 60px */
+        gap: 20px !important;
+    }
+
+    /* Заголовок та текст опису на всю ширину */
+    .project-title-full, 
+    .project-description {
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    .project-title-full {
+        font-size: 28px !important;
+    }
+
+    .project-description {
+        font-size: 18px !important;
+    }
+
+    /* Галерея проекту: робимо одну колонку замість двох */
+    .project-gallery-full {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Кожне зображення в галереї на повну ширину */
+    .project-image {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Текст у завантажувальному екрані проекту */
+    .project-header-full {
+        font-size: 24px !important;
+        padding: 0 20px !important;
+    }
+}
     }
 }
