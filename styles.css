@@ -709,54 +709,66 @@ video.gallery-media {
     }
 }
     
-    /* --- PROJECT PAGE SPECIFIC MOBILE FIXES --- */
+/* --- PROJECT PAGE SPECIFIC MOBILE FIXES --- */
 @media (max-width: 1000px) {
-    /* Вирівнюємо відступ зверху для головного контейнера проекту */
     main_project_main {
         margin-top: 80px !important;
-        display: block !important;
+        width: 100% !important;
+        overflow-x: hidden;
     }
 
-    /* Опис проекту: перетворюємо рядок на стовпчик */
+    /* 1. Заголовок на завантажувальному екрані - ПОВНЕ ЦЕНТРУВАННЯ */
+    #loading-screen .project-header-full {
+        font-size: 26px !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 2. Опис проекту - НА ВСЮ ШИРИНУ ТА ПО ЦЕНТРУ */
     .project-desc-full {
         flex-direction: column !important;
-        margin: 40px 20px !important; /* Прибираємо гігантські відступи 100px 60px */
+        margin: 40px 0 !important; /* Прибираємо бокові margin */
+        padding: 0 20px !important; /* Додаємо невеликий внутрішній відступ для тексту */
         gap: 20px !important;
-    }
-
-    /* Заголовок та текст опису на всю ширину */
-    .project-title-full, 
-    .project-description {
         width: 100% !important;
-        text-align: left !important;
+        box-sizing: border-box;
+        align-items: center !important; /* Центруємо вміст */
     }
 
     .project-title-full {
+        width: 100% !important;
         font-size: 28px !important;
+        text-align: center !important; /* Текст по центру */
+        margin: 0 0 10px 0 !important;
     }
 
     .project-description {
+        width: 100% !important;
         font-size: 18px !important;
+        text-align: center !important; /* Опис по центру */
+        line-height: 1.6 !important;
+        margin: 0 !important;
     }
 
-    /* Галерея проекту: робимо одну колонку замість двох */
+    /* 3. Галерея - БЕЗ ВІДСТУПІВ ПО БОКАХ (НА ВЕСЬ ЕКРАН) */
     .project-gallery-full {
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
-        padding: 0 10px !important;
+        gap: 10px !important;
+        margin: 0 !important; /* Прибираємо відступи галереї */
+        padding: 0 !important; /* Фото торкаються країв екрану */
+        width: 100% !important;
     }
 
-    /* Кожне зображення в галереї на повну ширину */
     .project-image {
         width: 100% !important;
-        height: auto !important;
-    }
-
-    /* Текст у завантажувальному екрані проекту */
-    .project-header-full {
-        font-size: 24px !important;
-        padding: 0 20px !important;
+        margin: 0 !important;
+        border-radius: 0 !important; /* Прибираємо закруглення, якщо були, для ефекту "на весь екран" */
     }
 }
 
