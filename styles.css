@@ -707,7 +707,7 @@ video.gallery-media {
         background: rgba(0,0,0,0.5) !important;
         padding: 10px 0;
     }
-
+}
     
     /* --- PROJECT PAGE SPECIFIC MOBILE FIXES --- */
 @media (max-width: 1000px) {
