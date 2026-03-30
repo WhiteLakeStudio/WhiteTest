@@ -207,12 +207,21 @@ video.gallery-media {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Центрування по вертикалі */
-    align-items: center;     /* Центрування по горизонталі */
-     /* Темний фон при наведенні */
+    
+    /* ЗМІНИ ТУТ: */
+    justify-content: flex-end; /* Притискаємо до низу */
+    align-items: flex-start;    /* Притискаємо до лівого краю */
+    
+    /* Додай відступи, щоб текст не торкався країв рамки */
+    padding: 20px; 
+    box-sizing: border-box;    /* Щоб падінги не роздували блок */
+
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    
+    /* Твій колір з прозорістю, про який ми говорили раніше: */
+    background: rgba(48, 47, 43, 0.7); 
 }
 
 .gallery-cell:hover .gallery-overlay {
