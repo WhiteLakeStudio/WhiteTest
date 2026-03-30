@@ -220,8 +220,6 @@ video.gallery-media {
     transition: opacity 0.3s ease;
     pointer-events: none;
     
-    /* Твій колір з прозорістю, про який ми говорили раніше: */
-    background: rgba(48, 47, 43, 0.7); 
 }
 
 .gallery-cell:hover .gallery-overlay {
