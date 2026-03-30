@@ -209,7 +209,7 @@ video.gallery-media {
     flex-direction: column;
     justify-content: center; /* Центрування по вертикалі */
     align-items: center;     /* Центрування по горизонталі */
-    background: #302F2B; /* Темний фон при наведенні */
+    background: rgba(48, 47, 43, 0.7); /* Темний фон при наведенні */
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
